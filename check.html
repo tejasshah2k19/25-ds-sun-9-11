@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    science = parseInt(prompt("Enter marks of science: "));
+    maths = parseInt(prompt("Enter marks of maths: "));
+    enginnering = parseInt(prompt("Enter marks of enginnering: "));
+    ms= science + enginnering;
+    me = maths + enginnering;
+    total = (maths + science + enginnering)/300*100;
+    if(ms>=190)
+    {
+        document.write("You have passed the exam maths and science");
+    }
+    else if (me>=180)
+    {
+        document.write("You have passed maths and enginnering");
+    }
+    else if(total >= 85)
+    {
+        document.write("PASSED");
+    }
+    else 
+    {
+        document.write("TRY AGAIN");
+    }
+</script>
+<body>
+    
+</body>
+</html>
