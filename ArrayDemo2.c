@@ -51,6 +51,7 @@ void removeItem(int location){
     for(i=location-1;i<SIZE;i++){
         a[i]  = a[i+1];
     }
+    // a[SIZE-1] = 0; 
 }
 
 int main()

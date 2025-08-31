@@ -51,4 +51,34 @@ Avg Case    :   THETA   -> Ti  / avg
 
 
 
+                            DS 
+
+        Linear DS                       Non Linear DS 
+        Array                           Tree
+        Stack                           Graph 
+        Queue
+        LinkedList 
+
+        Sorting : bubble , selection , insertion , merge , quick  
+        Searching : Linear , binary 
+
+
+-----------------------------------------------------------------------------------
+
+STACK => LiFo => Last In First Out => 
+
+Task Manager -> 
+
+Transaction -> History -> Browser -> Call Log -> 
+
+WhatsApp -> 
+Gallery  -> 
+
+
+
+Add : PUSH 
+display
+Remove : POP 
+
+-----------------------------------------------------------------------------------
 
