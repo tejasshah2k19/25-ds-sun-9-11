@@ -108,4 +108,37 @@ logic -> valid , Invalid
 
 
 
+stack manage -> 
 
+
+add -> push 
+remove -> pop 
+
+
+what instruction we need to write in push ? 
+top++ 
+
+
+how to check stack is full ? orverflow ? 
+top == SIZE-1 --> full | overflow 
+
+
+how to check stack is empty? 
+top=-1 
+
+
+stack -> LiFo => 
+-----------------------------------------------------------------
+
+FiFo ==> First In First Out
+
+Queue => FIFO 
+
+insert -> enQueue()
+remove -> deQueue()
+display()
+
+server request  -> action 
+call center -> 
+printer -> 
+-----------------------------------------------------------------
