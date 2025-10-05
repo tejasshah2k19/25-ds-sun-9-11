@@ -142,3 +142,57 @@ server request  -> action
 call center -> 
 printer -> 
 -----------------------------------------------------------------
+
+array of structure -> 3 marksheet 
+-----------------------------------------------------------------
+
+SMA -> implicit -> 
+
+int a; //  4 byte GCC , TC 2 byte 
+
+
+int x[10] ; // 10*4 => 40 byte 
+
+// 3 elements -> -7
+// 22 elements -> +12 
+
+DMA -> explicit  ->
+
+calloc() -- allocation 
+malloc() -- allocation 
+free()   -- release 
+realloc() -- resizing 
+
+
+malloc ->  single size block 
+calloc ->  n number of block with same size 
+
+malloc(100); // single block of 100 byte 
+calloc(25,4); // 25 block of 4 byte  
+
+
+a   -> malloc 
+a[] -> calloc 
+
+
+pointer - 
+----------------------------------------------------------
+
+Linked List - 
+            1) function 
+            2) structure 
+            3) pointer 
+            4) DMA 
+
+
+List -> collection of items 
+
+dynamic list ->
+            1) add : when you want to add item , you will allocate 
+            2) remove : when you dont want  , release memory 
+
+self referential structure 
+
+
+
+            data ---> node 
