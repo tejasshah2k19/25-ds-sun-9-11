@@ -43,34 +43,63 @@ void display()
     }
 }
 
-void addNodeBeg(int data){
-    struct node *tmp; 
+void addNodeBeg(int data)
+{
+    struct node *tmp;
 
     tmp = malloc(sizeof(struct node));
-    tmp->data = data; 
-    tmp->next = head; 
-    head = tmp; 
-
-
+    tmp->data = data;
+    tmp->next = head;
+    head = tmp;
 }
 
-void searchNode(int data){
-    struct node *p; 
-    int found = 0; 
+void searchNode(int data)
+{
+    struct node *p;
+    int found = 0;
 
-    for(p=head;  p!=NULL;  p=p->next) {
+    for (p = head; p != NULL; p = p->next)
+    {
 
-        if(p->data == data){
+        if (p->data == data)
+        {
             found = 1;
-            break;  
+            break;
         }
     }
 
-    if(found == 1)
-        printf("\n%d found",data);
+    if (found == 1)
+        printf("\n%d found", data);
     else
-        printf("\n%d not found",data);
+        printf("\n%d not found", data);
 }
+
+void delNodeBeg()
+{
+    struct node *p;
+    p = head;
+    head = head->next;
+    free(p);
+}
+
+void delNodeLast()
+{
+    struct node *p;
+
+    for (p = head; p->next != last; p = p->next)
+        ;
+
+    p->next = NULL;
+    free(last);
+    last = p;
+}
+
+//
+//
+//
+//
+
+
 int main()
 {
 
@@ -82,13 +111,14 @@ int main()
 
     display();
 
-    addNodeBeg(100); // add node item in the begining 
+    addNodeBeg(100); // add node item in the begining
     addNodeBeg(150);
     display();
 
-    searchNode(80); // found not found 
+    searchNode(80); // found not found
     searchNode(20);
 
+    delNodeBeg(); // remove node from begining
 
     return 0;
 }
