@@ -32,6 +32,45 @@ void addNode(int data)
     }
 }
 
+void display()
+{
+
+    struct node *p;
+    printf("\nLinked List Data : ");
+    for (p = head; p != NULL; p = p->next)
+    {
+        printf(" %d", p->data);
+    }
+}
+
+void addNodeBeg(int data){
+    struct node *tmp; 
+
+    tmp = malloc(sizeof(struct node));
+    tmp->data = data; 
+    tmp->next = head; 
+    head = tmp; 
+
+
+}
+
+void searchNode(int data){
+    struct node *p; 
+    int found = 0; 
+
+    for(p=head;  p!=NULL;  p=p->next) {
+
+        if(p->data == data){
+            found = 1;
+            break;  
+        }
+    }
+
+    if(found == 1)
+        printf("\n%d found",data);
+    else
+        printf("\n%d not found",data);
+}
 int main()
 {
 
@@ -39,9 +78,17 @@ int main()
     addNode(20);
     addNode(30);
     addNode(40);
+    addNode(50);
 
+    display();
 
-    printf(" %d  %d %d",head->data,head->next->data,head->next->next->data);//10 20 
+    addNodeBeg(100); // add node item in the begining 
+    addNodeBeg(150);
+    display();
+
+    searchNode(80); // found not found 
+    searchNode(20);
+
 
     return 0;
 }
