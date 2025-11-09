@@ -94,9 +94,9 @@ void delNodeLast()
     last = p;
 }
 
-void addNodeAny(int src, int data)
+void addNodeAny(int src, int data) // 10 20 30 40 50
 {
-    struct node *p,*tmp;
+    struct node *p, *tmp;
     if (head == NULL)
     {
         printf("\nInvalid Source : Linked List is Empty");
@@ -113,15 +113,71 @@ void addNodeAny(int src, int data)
             }
         }
 
-        if(p==NULL){
+        if (p == last)
+        {
+            addNode(data);
+        }
+        if (p == NULL)
+        {
             printf("\nInvalid Source : Source Not Found in the List ");
-        }else{
-            tmp =malloc(sizeof(struct node));
+        }
+        else
+        {
+            tmp = malloc(sizeof(struct node));
             tmp->data = data;
             tmp->next = p->next;
-            p->next=tmp; 
+            p->next = tmp;
+        }
+    }
+}
+
+// 10 20 30 40 50
+void delNodeAny(int src)
+{
+    struct node *p, *q;
+    if (head == NULL)
+    {
+        printf("\nInvalid Source : List is Empty");
+    }
+    else if (last->data == src)
+    {
+        delNodeLast();
+    }
+    else if (head->data == src)
+    {
+        delNodeBeg();
+    }
+    else
+    {
+        for (p = head; p != NULL; p = p->next)
+        {
+            if (p->data == src)
+            {
+                break;
+            }
         }
 
+        if (p == NULL)
+        {
+            printf("\nInvalid Source : Source Node not found in the List");
+        }
+        else
+        {
+            // 10 20 30 40 50
+            //    q  p
+
+            for (q = head; q != NULL; q = p->next)
+            {
+                if (q->next->data == src)
+                {
+                    break;
+                }
+            }
+
+            //20->40
+            q->next  = p->next;
+            free(p);
+        }
     }
 }
 
