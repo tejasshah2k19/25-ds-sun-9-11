@@ -10,7 +10,7 @@ struct node
 
 struct node *last = NULL;
 
-void addNode(int data)
+void addNode(int data) // 10  20  30
 {
     struct node *tmp = NULL;
 
@@ -76,8 +76,8 @@ void searchNode(int data)
 
 void delNodeBeg()
 {
-    struct node *p;
-    p = head;
+    struct node *p; // pointer
+    p = head;       // pointer -> address assign
     head = head->next;
     free(p);
 }
@@ -94,14 +94,56 @@ void delNodeLast()
     last = p;
 }
 
-//
-//
-//
-//
+void addNodeAny(int src, int data)
+{
+    struct node *p,*tmp;
+    if (head == NULL)
+    {
+        printf("\nInvalid Source : Linked List is Empty");
+    }
+    else
+    {
+        // search-> src
 
+        for (p = head; p != NULL; p = p->next)
+        {
+            if (p->data == src)
+            {
+                break;
+            }
+        }
+
+        if(p==NULL){
+            printf("\nInvalid Source : Source Not Found in the List ");
+        }else{
+            tmp =malloc(sizeof(struct node));
+            tmp->data = data;
+            tmp->next = p->next;
+            p->next=tmp; 
+        }
+
+    }
+}
 
 int main()
 {
+
+    // addNode(10);
+    // addNode(20);
+    // addNode(30);
+    // addNode(40);
+    // addNode(50);
+
+    // display();
+
+    // addNodeBeg(100); // add node item in the begining
+    // addNodeBeg(150);
+    // display();
+
+    // searchNode(80); // found not found
+    // searchNode(20);
+
+    // delNodeBeg(); // remove node from begining
 
     addNode(10);
     addNode(20);
@@ -109,16 +151,7 @@ int main()
     addNode(40);
     addNode(50);
 
-    display();
-
-    addNodeBeg(100); // add node item in the begining
-    addNodeBeg(150);
-    display();
-
-    searchNode(80); // found not found
-    searchNode(20);
-
-    delNodeBeg(); // remove node from begining
+    addNodeAny(30, 35);
 
     return 0;
 }
