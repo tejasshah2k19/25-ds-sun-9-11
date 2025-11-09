@@ -30,11 +30,34 @@ void addNodeLast(int data)
     }
 }
 
-void display(){
+void display()
+{
     struct node *p;
     printf("\nAll Data from List : ");
-    for(p=head; p!=NULL; p=p->next){
-        printf(" %d",p->data);
+    for (p = head; p != NULL; p = p->next)
+    {
+        printf(" %d", p->data);
+    }
+}
+
+// 10    20  30  40  50
+// 100 10 20 30 40 50
+
+void addNodeBeg(int data)
+{
+    struct node *tmp;
+    if (head == NULL)
+    {
+        addNodeLast(data);
+    }
+    else
+    {
+        tmp = malloc(sizeof(struct node));
+        tmp->data = data;
+        tmp->next = head;
+        tmp->prev = NULL;
+        head->prev = tmp;
+        head = tmp;
     }
 }
 
@@ -46,8 +69,10 @@ int main()
     addNodeLast(30);
     addNodeLast(40);
     addNodeLast(50);
+    display();
+    addNodeBeg(100);
 
-    display(); 
+    display();
 
     return 0;
 }
