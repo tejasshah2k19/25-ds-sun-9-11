@@ -196,3 +196,34 @@ self referential structure
 
 
             data ---> node 
+            
+----------------------------------------------------------
+    50   12     60  70  18  90
+
+
+         50
+ 60               12 
+
+
+        50
+12              60
+
+binary tree -> max 2 child 
+
+binary search tree -> 
+    1) binary tree 
+    2) data > parent right side  
+       data < parent left side 
+
+ 50   12     60  70  18  90
+
+
+                50
+          12            60
+               18                 70  
+                                        90
+
+
+---------------------------------------------------------------
+
+
