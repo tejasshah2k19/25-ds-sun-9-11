@@ -226,4 +226,151 @@ binary search tree ->
 
 ---------------------------------------------------------------
 
+a = [11,22,33,44,55,66] 
+
+odd = a.filter(x=>x%2 == 1)
+
+
+max = a.filter(x=>x > 15 )
+
+.map()
+
+.forEach() 
+
+---------------------------------------------------------------
+
+why we call function itself? 
+
+
+void sub(){
+    printf("good morning");
+}
+
+void add(){
+    printf("hi");
+    sub(); 
+    printf("bye");
+}
+
+main(){
+    printf("jay bharat");
+    add(); 
+    printf("jai hind");
+}
+
+
+---------------------------------------------------------------
+int cnt = 0; 
+
+void greet(){
+
+    printf("Good morning"); 
+    cnt++; //1 2 3 4 5  
+
+    if(cnt < 5 )
+        greet();
+}
+
+main(){
+    greet();
+}
+
+
+
+---------------------------------------------------------------
+
+ 
+
+void greet(int cnt){ // 1
+     printf("Good morning"); //1 2 3 4  5   
+     cnt--;//0
+
+     if(cnt >= 1)
+        greet(cnt); //
+   
+
+
+}
+
+main(){
+    greet(5);//5 
+}
+
+
+---------------------------------------------------------------
+
+
+
+
+void print(int cnt){ // 1
+
+     printf(" %d",cnt);     
+     cnt--;//0
+
+     if(cnt >= 1)
+        print(cnt); //
+}
+
+main(){
+    print(5);//5 
+}
+---------------------------------------------------------------
+
+
+
+void print(int cnt){ // 1
+
+    if(cnt >= 1)
+        print(cnt); //
+
+     printf(" %d",cnt);     
+     cnt--;//0
+
+    
+}
+
+main(){
+    print(5);//5 
+}
+
+--------------------------------------------------------------
+
+
+void print(int cnt){ // 3 
+
+     cnt--;//3
+
+    if(cnt >= 1)
+        print(cnt); //4 3 2 1 0  
+
+     printf(" %d",cnt);     
+
+    
+}
+
+main(){
+    print(5);//5 
+}
+
+--------------------------------------------------------------
+
+
+void print(int cnt){ // 3 
+
+    printf("%d",cnt);
+    if(cnt>=1){
+        print(--cnt);
+    }
+    
+}
+
+main(){
+    print(5);//5 
+}
+
+
+
+--------------------------------------------------------------
+
+
 

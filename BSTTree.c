@@ -11,9 +11,9 @@ struct node
 // small left
 // big right
 
-struct node *addNode(struct node *root, int data)
+struct node *addNode(struct node *root, int data) // 50
 {
-    // root = 70
+    // root = NULL
     if (root == NULL)
     {
         root = malloc(sizeof(struct node));
@@ -23,17 +23,19 @@ struct node *addNode(struct node *root, int data)
     }
     else
     {
-        if (data < root->data)
+        // 90 > 70
+        if (data > root->data)
         {
-            // left l
-            root->left = addNode(root->left, data);
+            root->right = addNode(root->right, data);
+            // 50->right = addNode(70,90)
+            // 70->right = addNode(NULL,90);
         }
         else
         {
-            // right
-            root->right = addNode(root->right, data);
+            root->left = addNode(root->left, data);
         }
     }
+
     return root;
 }
 
@@ -54,6 +56,17 @@ void preOrder(struct node *root)
         printf(" %d ", root->data);
         preOrder(root->left);
         preOrder(root->right);
+    }
+}
+
+void postOrder(struct node *root)
+{
+
+    if (root != NULL)
+    {
+        postOrder(root->left);
+        postOrder(root->right);
+        printf(" %d ", root->data);
     }
 }
 int main()
